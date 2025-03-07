@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ドキュメント</title>
+    <title>画像を右に移動</title>
     <style>
         body {
             margin: 0;
@@ -11,7 +11,7 @@
             font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
             height: 200vh; /* 2ページ分の高さ */
             scroll-behavior: smooth;
@@ -21,21 +21,12 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
-            position: relative;
         }
         .page img {
             display: block;
             width: 50%;
-            margin-right: 20px;
-        }
-        .button-container {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            justify-content: center;
         }
         .image-button {
             background: none;
@@ -47,6 +38,16 @@
             display: block;
             width: 50%;
         }
+        .button-container {
+            margin-top: 20px;
+        }
+        .move-right {
+            /* margin-leftを使って右に移動 */
+            margin-left: 50px;
+
+            /* もしくは transformプロパティを使って右に移動 */
+            /* transform: translateX(50px); */
+        }
     </style>
     <script>
         function navigateToURL() {
@@ -56,12 +57,10 @@
 </head>
 <body>
     <div class="page">
+        <img src="example.jpg" alt="サンプル画像" class="move-right">
+    </div>
+    <div class="page">
         <img src="aaaaa.png" alt="説明文">
-        <div class="button-container">
-            <button class="image-button" onclick="navigateToURL()">
-                <img src="全力でサポートするからこその実績 (3).png" alt="Button Image">
-            </button>
-        </div>
     </div>
     <div class="page">
         <img src="aaaaa.png" alt="説明文">

@@ -13,8 +13,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            overflow: hidden;
+            height: 200vh; /* 2ページ分の高さ */
+            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         .page {
             width: 100vw;
@@ -24,11 +25,16 @@
             align-items: center;
             justify-content: center;
         }
+        .page img {
+            display: block;
+            width: 100%;
+        }
         .image-button {
             background: none;
             border: none;
             padding: 0;
             cursor: pointer;
+            position: relative;
         }
         .image-button img {
             display: block;
@@ -38,39 +44,24 @@
             position: absolute;
             bottom: 20px;
         }
-        .hidden {
-            display: none;
-        }
     </style>
     <script>
-        function showPage(pageId) {
-            document.getElementById('page-1').classList.add('hidden');
-            document.getElementById('page-2').classList.add('hidden');
-            document.getElementById(pageId).classList.remove('hidden');
+        function navigateToURL() {
+            window.location.href = "https://gitgorira.github.io/Money-survey/";
         }
     </script>
 </head>
 <body>
     <div id="page-1" class="page">
-        <img src="全力でサポートするからこその実績.png" alt="説明文" width="100%">
-        <div class="button-container">
-            <button class="image-button" onclick="showPage('page-2')">
-                <img src="全力でサポートするからこその実績 (3).png" alt="Button Image">
-            </button>
-        </div>
+        <img src="全力でサポートするからこその実績.png" alt="説明文">
     </div>
-    <div id="page-2" class="page hidden">
-        <img src="全力でサポートするからこその実績 (2).png" alt="説明文" width="100%">
+    <div id="page-2" class="page">
+        <img src="全力でサポートするからこその実績 (2).png" alt="説明文">
         <div class="button-container">
             <button class="image-button" onclick="navigateToURL()">
                 <img src="全力でサポートするからこその実績 (3).png" alt="Button Image">
             </button>
         </div>
     </div>
-    <script>
-        function navigateToURL() {
-            window.location.href = "https://gitgorira.github.io/Money-survey/";
-        }
-    </script>
 </body>
 </html>

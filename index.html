@@ -12,6 +12,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
         }
         .page {
             width: 100vw;
@@ -32,20 +35,31 @@
             width: 50%;
         }
         .button-container {
-            margin-top: 20px;
+            position: absolute;
+            bottom: 20px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
     <script>
-        function navigateToURL() {
-            window.location.href = "https://gitgorira.github.io/Money-survey/";
+        function showPage(pageId) {
+            document.getElementById('page-1').classList.add('hidden');
+            document.getElementById('page-2').classList.add('hidden');
+            document.getElementById(pageId).classList.remove('hidden');
         }
     </script>
 </head>
 <body>
-    <div class="page">
+    <div id="page-1" class="page">
         <img src="全力でサポートするからこその実績.png" alt="説明文" width="100%">
+        <div class="button-container">
+            <button class="image-button" onclick="showPage('page-2')">
+                <img src="全力でサポートするからこその実績 (3).png" alt="Button Image">
+            </button>
+        </div>
     </div>
-    <div class="page">
+    <div id="page-2" class="page hidden">
         <img src="全力でサポートするからこその実績 (2).png" alt="説明文" width="100%">
         <div class="button-container">
             <button class="image-button" onclick="navigateToURL()">
@@ -53,5 +67,10 @@
             </button>
         </div>
     </div>
+    <script>
+        function navigateToURL() {
+            window.location.href = "https://gitgorira.github.io/Money-survey/";
+        }
+    </script>
 </body>
 </html>

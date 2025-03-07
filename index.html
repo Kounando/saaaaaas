@@ -23,10 +23,18 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         .page img {
             display: block;
-            width: 50%;
+            width: 100%;
+        }
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
         .image-button {
             background: none;
@@ -38,9 +46,6 @@
             display: block;
             width: 50%;
         }
-        .button-container {
-            margin-top: 20px;
-        }
     </style>
     <script>
         function navigateToURL() {
@@ -51,6 +56,11 @@
 <body>
     <div class="page">
         <img src="aaaaa.png" alt="説明文">
+        <div class="button-container">
+            <button class="image-button" onclick="navigateToURL()">
+                <img src="全力でサポートするからこその実績 (3).png" alt="Button Image">
+            </button>
+        </div>
     </div>
     <div class="page">
         <img src="aaaaa.png" alt="説明文">
